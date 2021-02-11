@@ -37,7 +37,8 @@ class MessagesController extends Controller
      * @return mixed
      */
     public function index() {
-        $threads = Thread::getAllLatest()->get();
+        //$threads = Thread::getAllLatest()->get();
+        $threads = Thread::forUserWithNewMessages(Auth::id())->latest('updated_at')->get();
         return view('messager.index', compact('threads'));
     }
 

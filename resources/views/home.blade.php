@@ -7,5 +7,4 @@
             {{ Session::get('error_message') }}
         </div>
     @endif
-    <div class="alert alert-warning">Grosse pute</div>
 @endsection

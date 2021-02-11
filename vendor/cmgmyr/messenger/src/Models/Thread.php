@@ -114,17 +114,6 @@ class Thread extends Eloquent
     }
 
     /**
-     * Récuperer toute les conversations
-     * 
-     * @return \Illuminate\Database\Query\Builder|static
-     */
-    public static function getAllThread()
-    {
-        
-        return null;
-    }
-
-    /**
      * Returns all of the latest threads by updated_at date.
      *
      * @return \Illuminate\Database\Query\Builder|static

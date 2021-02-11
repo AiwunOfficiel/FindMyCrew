@@ -83,18 +83,7 @@
                                                         <p>Vous avez <?php echo e($count); ?> nouveau(x) message(s)</p>
                                                     </div>
                                                     <?php if($count > 0): ?>
-                                                        <?php echo $__env->renderEach($threads as $thread); ?>
-                                                            <div class="mess__item">
-                                                                <div class="image img-cir img-40">
-                                                                    <img src="//www.gravatar.com/avatar/<?php echo e(md5($thread->creator()->email)); ?>" alt="<?php echo e($thread->creator()->name); ?>" />
-                                                                </div>
-                                                                <div class="content">
-                                                                    <h6><?php echo e($thread->creator()->name); ?></h6>
-                                                                    <p><?php echo e($thread->latestMessage->body); ?></p>
-                                                                    <span class="time">3 min ago</span>
-                                                                </div>
-                                                            </div>
-                                                        @endeach
+                                                        <?php echo $__env->renderEach('message.thread', $threads, 'thread', 'message.no-thread'); ?>
                                                     <?php endif; ?>
                                                     <?php if($count > 0): ?>
                                                         <div class="mess__footer">

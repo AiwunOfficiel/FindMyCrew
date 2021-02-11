@@ -83,18 +83,7 @@
                                                         <p>Vous avez {{ $count }} nouveau(x) message(s)</p>
                                                     </div>
                                                     @if($count > 0)
-                                                        @foreach ($threads as $thread)
-                                                            <div class="mess__item">
-                                                                <div class="image img-cir img-40">
-                                                                    <img src="//www.gravatar.com/avatar/{{ md5($thread->creator()->email) }}" alt="{{ $thread->creator()->name }}" />
-                                                                </div>
-                                                                <div class="content">
-                                                                    <h6>{{ $thread->creator()->name }}</h6>
-                                                                    <p>{{ $thread->latestMessage->body }}</p>
-                                                                    <span class="time">3 min ago</span>
-                                                                </div>
-                                                            </div>
-                                                        @endforeach
+                                                        @each('message.thread', $threads, 'thread', 'message.no-thread')
                                                     @endif
                                                     @if($count > 0)
                                                         <div class="mess__footer">
