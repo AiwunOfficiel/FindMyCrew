@@ -25,7 +25,7 @@ class MessagesController extends Controller
             if($value = 'count'):
                 return Auth::user()->newThreadsCount();
             elseif($value = 'threads'):
-                return Thread::getAllLatest()->get();
+                return Thread::forUserWithNewMessages(Auth::id())->latest('updated_at')->get();
             endif;
         endif;
     }
