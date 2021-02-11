@@ -34,7 +34,8 @@ class HomeController extends Controller
          * 
          * @return mixed
          */
-        return view('home', compact('threads'))
-            ->with('count', $message->header('count'));
+        return view('home')
+            ->with('count', $message->header('count'))
+            ->with('threads', $message->header('threads'));
     }
 }
