@@ -27,7 +27,6 @@ class HomeController extends Controller
     public function index()
     {
         $message = new MessagesController; # Déclaration de la variable message
-        $threads = Thread::forUserWithNewMessages(Auth::id())->latest('updated_at')->get();
 
         /**
          * Affichage de la page home
